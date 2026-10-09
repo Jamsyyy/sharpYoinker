@@ -1,0 +1,95 @@
+﻿<ContentPage xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="sharpYoinkerAPP.Views.MainView">
+
+    <ScrollViewer>
+        <StackPanel Margin="30"
+                    Spacing="16"
+                    MaxWidth="650"
+                    HorizontalAlignment="Center">
+
+            <TextBlock Text="sharpYoinker"
+                       FontSize="32"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"/>
+
+            <TextBlock Text="Yoink everything from youtube (for now atleast)"
+                       HorizontalAlignment="Center"
+                       Opacity="0.7"/>
+
+            <TextBox x:Name="UrlInput"
+                     PlaceholderText="Paste a YouTube URL here..."/>
+
+            <Button x:Name="FetchButton"
+                    Content="Fetch Video Info"/>
+
+            <Image x:Name="ThumbnailImage"
+                   Width="320"
+                   Height="180"
+                   Stretch="Uniform"
+                   IsVisible="False"/>
+
+            <TextBlock x:Name="TitleText"
+                       Text="Video title will appear here"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       TextWrapping="Wrap"/>
+
+            <TextBlock x:Name="UploaderText"
+                       Text=""
+                       TextWrapping="Wrap"/>
+
+            <TextBlock x:Name="DurationText"
+                       Text=""
+                       TextWrapping="Wrap"/>
+
+            <TextBlock x:Name="ResolutionText"
+                       Text="Available resolutions will appear here"
+                       TextWrapping="Wrap"/>
+
+            <TextBlock Text="Download format"/>
+            <ComboBox x:Name="FormatSelector"
+                      SelectedIndex="0">
+                <ComboBoxItem Content="MP4 — Video"/>
+                <ComboBoxItem Content="MP3 — Audio"/>
+            </ComboBox>
+
+            <StackPanel x:Name="QualityPanel" Spacing="8">
+                <TextBlock Text="Video quality"/>
+
+                <ComboBox x:Name="QualitySelector"
+                          PlaceholderText="Fetch a video first"/>
+            </StackPanel>
+
+            <TextBlock Text="Save location"/>
+
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                <TextBox x:Name="OutputPathInput"
+                         Grid.Column="0"
+                         IsReadOnly="True"/>
+
+                <Button x:Name="BrowseButton"
+                        Grid.Column="1"
+                        Content="Browse..."/>
+            </Grid>
+
+            <Button x:Name="DownloadButton"
+                    Content="Download"
+                    HorizontalAlignment="Stretch"
+                    Padding="12"/>
+
+            <ProgressBar x:Name="DownloadProgress"
+                         Minimum="0"
+                         Maximum="100"
+                         Value="0"
+                         Height="10"
+                         IsVisible="False"/>
+
+            <TextBlock x:Name="StatusText"
+                       Text="Ready."
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center"/>
+
+        </StackPanel>
+    </ScrollViewer>
+</ContentPage>

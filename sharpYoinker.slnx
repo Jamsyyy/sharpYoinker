@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="sharpYoinker/sharpYoinker.csproj" />
+  <Project Path="sharpYoinkerAPP/sharpYoinkerAPP.Android/sharpYoinkerAPP.Android.csproj" Id="aa1d0a4e-7957-452f-99ed-df1f3daa8195" />
+  <Project Path="sharpYoinkerAPP/sharpYoinkerAPP.Browser/sharpYoinkerAPP.Browser.csproj" Id="b693a1d8-2099-4edd-a129-2bf69e93af05" />
+  <Project Path="sharpYoinkerAPP/sharpYoinkerAPP.Desktop/sharpYoinkerAPP.Desktop.csproj" Id="75392550-c48c-4800-92a4-eec52b37e6f8" />
+  <Project Path="sharpYoinkerAPP/sharpYoinkerAPP.iOS/sharpYoinkerAPP.iOS.csproj" Id="b3e7e6b9-2e9c-4734-b259-bc26d73e17dc" />
+  <Project Path="sharpYoinkerAPP/sharpYoinkerAPP/sharpYoinkerAPP.csproj" Id="8359ae2e-5d01-4b29-bcf5-5562f23a97b3" />
+</Solution>
