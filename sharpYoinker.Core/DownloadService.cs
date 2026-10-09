@@ -18,7 +18,7 @@ public class DownloadService
         var arguments = new List<string>
         {
             "--js-runtimes",
-            "node",
+            $"deno:{Path.Combine(AppContext.BaseDirectory, "deno.exe")}",
             "--newline",
             "--progress",
             "-x",

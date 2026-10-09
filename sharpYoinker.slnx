@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="sharpYoinker.Core/sharpYoinker.Core.csproj" />
   <Project Path="sharpYoinker/sharpYoinker.csproj" />
   <Project Path="sharpYoinkerAPP/sharpYoinkerAPP.Android/sharpYoinkerAPP.Android.csproj" Id="aa1d0a4e-7957-452f-99ed-df1f3daa8195" />
   <Project Path="sharpYoinkerAPP/sharpYoinkerAPP.Browser/sharpYoinkerAPP.Browser.csproj" Id="b693a1d8-2099-4edd-a129-2bf69e93af05" />

@@ -6,7 +6,7 @@
         xmlns:views="using:sharpYoinkerAPP.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="sharpYoinkerAPP.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico"
+        Icon="/Assets/favicon.ico"
         Title="sharpYoinkerAPP">
         <views:MainView />
 </Window>

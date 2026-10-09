@@ -1,94 +1,208 @@
 ﻿<ContentPage xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="sharpYoinkerAPP.Views.MainView">
+             x:Class="sharpYoinkerAPP.Views.MainView"
+             Background="#171719">
+
+<ContentPage.Styles>
+
+    <!-- Get Video: blue -->
+    <Style Selector="Button.fetch-button">
+        <Setter Property="Background" Value="#3478F6"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="#3478F6"/>
+    </Style>
+
+    <Style Selector="Button.fetch-button:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="#5290FF"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style Selector="Button.fetch-button:pressed /template/ ContentPresenter">
+        <Setter Property="Background" Value="#245CC5"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <!-- Download: red -->
+    <Style Selector="Button.download-button">
+        <Setter Property="Background" Value="#FF3038"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="#FF3038"/>
+    </Style>
+
+    <Style Selector="Button.download-button:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="#FF555C"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style Selector="Button.download-button:pressed /template/ ContentPresenter">
+        <Setter Property="Background" Value="#D91F29"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+</ContentPage.Styles>
 
     <ScrollViewer>
         <StackPanel Margin="30"
-                    Spacing="16"
+                    Spacing="18"
                     MaxWidth="650"
                     HorizontalAlignment="Center">
 
-            <TextBlock Text="sharpYoinker"
-                       FontSize="32"
-                       FontWeight="Bold"
-                       HorizontalAlignment="Center"/>
-
-            <TextBlock Text="Yoink everything from youtube (for now atleast)"
-                       HorizontalAlignment="Center"
-                       Opacity="0.7"/>
-
-            <TextBox x:Name="UrlInput"
-                     PlaceholderText="Paste a YouTube URL here..."/>
-
-            <Button x:Name="FetchButton"
-                    Content="Fetch Video Info"/>
-
-            <Image x:Name="ThumbnailImage"
-                   Width="320"
-                   Height="180"
-                   Stretch="Uniform"
-                   IsVisible="False"/>
-
-            <TextBlock x:Name="TitleText"
-                       Text="Video title will appear here"
-                       FontSize="18"
-                       FontWeight="Bold"
-                       TextWrapping="Wrap"/>
-
-            <TextBlock x:Name="UploaderText"
-                       Text=""
-                       TextWrapping="Wrap"/>
-
-            <TextBlock x:Name="DurationText"
-                       Text=""
-                       TextWrapping="Wrap"/>
-
-            <TextBlock x:Name="ResolutionText"
-                       Text="Available resolutions will appear here"
-                       TextWrapping="Wrap"/>
-
-            <TextBlock Text="Download format"/>
-            <ComboBox x:Name="FormatSelector"
-                      SelectedIndex="0">
-                <ComboBoxItem Content="MP4 — Video"/>
-                <ComboBoxItem Content="MP3 — Audio"/>
-            </ComboBox>
-
-            <StackPanel x:Name="QualityPanel" Spacing="8">
-                <TextBlock Text="Video quality"/>
-
-                <ComboBox x:Name="QualitySelector"
-                          PlaceholderText="Fetch a video first"/>
+            <!-- App title -->
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Spacing="0">
+                <TextBlock Text="sharp"
+                           FontSize="36"
+                           FontWeight="Bold"
+                           Foreground="#FF3038"/>
+                <TextBlock Text="Yoinker"
+                           FontSize="36"
+                           FontWeight="Bold"
+                           Foreground="#FFFFFF"/>
             </StackPanel>
 
-            <TextBlock Text="Save location"/>
+            <TextBlock Text="Yoink everything from YouTube (for now at least)"
+                       HorizontalAlignment="Center"
+                       Foreground="#A0A0A8"
+                       TextWrapping="Wrap"/>
 
-            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
-                <TextBox x:Name="OutputPathInput"
-                         Grid.Column="0"
-                         IsReadOnly="True"/>
+            <!-- URL input -->
+            <TextBox x:Name="UrlInput"
+                     PlaceholderText="Paste a YouTube URL here..."
+                     Padding="12"
+                     Background="#242428"
+                     Foreground="#FFFFFF"
+                     BorderBrush="#3A3A40"/>
 
-                <Button x:Name="BrowseButton"
-                        Grid.Column="1"
-                        Content="Browse..."/>
+            <Button x:Name="FetchButton"
+                    Classes="fetch-button"
+                    Content="Get Video"
+                    Padding="12"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    FontWeight="SemiBold"
+                    CornerRadius="8"/>
+
+            <!-- Video information -->
+            <Border Background="#202023"
+                    BorderBrush="#343438"
+                    BorderThickness="1"
+                    CornerRadius="12"
+                    Padding="18">
+
+                <StackPanel Spacing="12">
+
+                    <Image x:Name="ThumbnailImage"
+                           Width="320"
+                           Height="180"
+                           Stretch="Uniform"
+                           IsVisible="False"
+                           HorizontalAlignment="Center"/>
+
+                    <TextBlock x:Name="TitleText"
+                               Text="Video title will appear here"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Foreground="#FFFFFF"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock x:Name="UploaderText"
+                               Foreground="#B8B8C0"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock x:Name="DurationText"
+                               Foreground="#B8B8C0"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock x:Name="ResolutionText"
+                               Text="Available resolutions will appear here"
+                               Foreground="#B8B8C0"
+                               TextWrapping="Wrap"/>
+
+                </StackPanel>
+            </Border>
+
+            <!-- Format and quality side by side -->
+            <Grid ColumnDefinitions="*,*"
+                  ColumnSpacing="14">
+
+                <StackPanel Grid.Column="0" Spacing="8">
+                    <TextBlock Text="Download format"
+                               Foreground="#D8D8DE"
+                               FontWeight="SemiBold"/>
+
+                    <ComboBox x:Name="FormatSelector"
+                              SelectedIndex="0">
+                        <ComboBoxItem Content="MP4 — Video"/>
+                        <ComboBoxItem Content="MP3 — Audio"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel x:Name="QualityPanel"
+                            Grid.Column="1"
+                            Spacing="8">
+                    <TextBlock Text="Video quality"
+                               Foreground="#D8D8DE"
+                               FontWeight="SemiBold"/>
+
+                    <ComboBox x:Name="QualitySelector"
+                              PlaceholderText="Fetch a video first"/>
+                </StackPanel>
+
             </Grid>
 
+            <!-- Save location -->
+            <StackPanel Spacing="8">
+                <TextBlock Text="Save location"
+                           Foreground="#D8D8DE"
+                           FontWeight="SemiBold"/>
+
+                <Grid ColumnDefinitions="*,Auto"
+                      ColumnSpacing="8">
+
+                    <TextBox x:Name="OutputPathInput"
+                             Grid.Column="0"
+                             IsReadOnly="True"
+                             Padding="10"
+                             Background="#242428"
+                             Foreground="#D8D8DE"
+                             BorderBrush="#3A3A40"/>
+
+                    <Button x:Name="BrowseButton"
+                            Grid.Column="1"
+                            Background="#242428"
+                            Foreground="#D8D8DE"
+                            Content="Browse..."
+                            Padding="12,8"/>
+
+                </Grid>
+            </StackPanel>
+
+            <!-- Main download action -->
             <Button x:Name="DownloadButton"
                     Content="Download"
+                    Classes="download-button"
                     HorizontalAlignment="Stretch"
-                    Padding="12"/>
+                    HorizontalContentAlignment="Center"
+                    Padding="14"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    CornerRadius="8"/>
 
             <ProgressBar x:Name="DownloadProgress"
                          Minimum="0"
                          Maximum="100"
                          Value="0"
                          Height="10"
-                         IsVisible="False"/>
+                         IsVisible="False"
+                         Background="#343438"
+                         Foreground="#FFFFFF"/>
 
             <TextBlock x:Name="StatusText"
                        Text="Ready."
                        TextWrapping="Wrap"
-                       HorizontalAlignment="Center"/>
+                       HorizontalAlignment="Center"
+                       Foreground="#FFFFFF"/>
 
         </StackPanel>
     </ScrollViewer>

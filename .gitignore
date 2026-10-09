@@ -1,4 +1,7 @@
 **/bin/
 **/obj/
 .vs/
-.idea/
+publish/
+publish.zip
+
+sharpYoinkerAPP/sharpYoinkerAPP.Desktop/tools/

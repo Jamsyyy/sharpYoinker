@@ -61,7 +61,12 @@ public partial class MainView : ContentPage
 
         try
         {
-            var runner = new YtDlpRunner(@"D:\yt-dlp.exe");
+            var ytdlpPath = Path.Combine(
+                AppContext.BaseDirectory,
+                "yt-dlp.exe"
+            );
+
+            var runner = new YtDlpRunner(ytdlpPath);
 
             var result = await runner.RunAsync(new[]
             {

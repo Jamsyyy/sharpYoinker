@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RootNamespace>sharpYoinkerAPP</RootNamespace>
     <OutputType>WinExe</OutputType>
@@ -6,6 +6,9 @@
     See https://docs.avaloniaui.net/docs/guides/platforms/platform-specific-code/dotnet for more details.-->
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
+	<DebugType>none</DebugType>
+	<DebugSymbols>false</DebugSymbols>
+	<ApplicationIcon>Assets\favicon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -19,4 +22,15 @@
   <ItemGroup>
     <ProjectReference Include="..\sharpYoinkerAPP\sharpYoinkerAPP.csproj" />
   </ItemGroup>
+
+	<ItemGroup>
+	    <None Update="tools\yt-dlp.exe" TargetPath="yt-dlp.exe" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+
+	    <None Update="tools\ffmpeg.exe" TargetPath="ffmpeg.exe" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+
+	    <None Update="tools\ffprobe.exe" TargetPath="ffprobe.exe" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+
+		<None Update="tools\deno.exe" TargetPath="deno.exe" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+	</ItemGroup>
+	
 </Project>

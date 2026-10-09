@@ -31,10 +31,6 @@ public class YtDlpRunner
         {
             startInfo.ArgumentList.Add(argument);
         }
-        System.IO.File.WriteAllText(
-            $@"D:\yt-debug-{DateTime.Now:yyyyMMdd-HHmmss-fff}.txt",
-            $"EXE: {startInfo.FileName}\n" +
-            $"ARGS:\n{string.Join("\n", startInfo.ArgumentList)}");
 
         using var process = new Process
         {

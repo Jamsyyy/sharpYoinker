@@ -6,5 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+	
+  <ItemGroup>
+	<ProjectReference Include="..\sharpYoinker.Core\sharpYoinker.Core.csproj" />
+  </ItemGroup>
 </Project>
